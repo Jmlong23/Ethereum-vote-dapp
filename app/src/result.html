@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投票结果</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <link href='https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+</head>
+<body class="main">
+    <div class="header main">
+        <div class="h_top">
+            <div class="topCon mian clearFixed">
+                <div class="conLeft fl">
+                    <div class="leftlogo fl">
+                        <a href="" class="logo">基于区块链的安全投票系统</a>
+                        <!-- <a href="" class="logo"><img src="img/logo.png" width="90px" height="45px" ></a> -->
+                    </div>
+                    <ul class="ulList clearFixed fl">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="vote.html">发起投票与投票</a></li>
+                        <li><a href="result.html">投票结果</a></li>
+                    </ul>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <h3 class="main">投票统计图</h3>
+    <div id="containerResult" style="width: 550px; height: 400px; margin: 0 auto"></div>
+    <div class="text-center ">
+        <a href="#" onclick="App.getResult()" class="btn btn-primary">刷新结果</a>
+    </div>
+    <h3 class="main">获胜信息</h3>
+    <table class="table table-bordered main">
+        <thead>
+            <tr>
+                <th>获胜者</th>
+                <th>所得票数</th>
+            </tr>
+        </thead>
+        <tbody id = "tbodyWin">
+        </tbody>
+    </table>
+    <nav class="navbar navbar-default navbar-fixed-bottom main"><!--贴在底部，不会消失-->
+        <div style="text-align:center" ><strong><p id="account"></p></strong></div>
+        <div style="text-align:center" ><strong><p id="chairAccount"></p></strong></div>
+    </nav>
+</body>
+    
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+    <script src="./index.js"></script>
+</html>

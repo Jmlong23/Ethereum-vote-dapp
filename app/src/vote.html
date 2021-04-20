@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Voting DApp</title>
+        <link href='https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+        <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+    </head>
+    
+    <body class="container main">
+        <div class="header main">
+            <div class="h_top">
+                <div class="topCon mian clearFixed">
+                    <div class="conLeft fl">
+                        <div class="leftlogo fl">
+                            <a href="#" class="logo">基于区块链的安全投票系统</a>
+                            <!-- <a href="" class="logo"><img src="img/logo.png" width="90px" height="45px" ></a> -->
+                        </div>
+                        <ul class="ulList clearFixed fl">
+                            <li><a href="index.html">首页</a></li>
+                            <li><a href="vote.html">发起投票与投票</a></li>
+                            <li><a href="result.html">投票结果</a></li>
+                        </ul>
+                        
+                    </div>
+                    <div class="conRight fr">
+                        <ul class="ulList clearFixed">
+                            <li>
+                            <select id="selectAccount">
+                                
+                            </select>
+                            </li>
+                            <li><a href="#" onclick="App.changeAccount()" class="login2"><span>|</span>切换</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2>发起投票(只有管理员可以发起投票)</h2>
+        <hr size=10>
+        <div class="text-center ">
+            <input type="text" id="creatVote" placeholder="输入如：biden,trump"/>
+            <a href="#" onclick="App.createVote()" class="btn btn-primary">发起投票</a>
+        </div>
+        <hr size=10>
+        <h2 >投票选项列表(你只有一票的权利，你只可以给一个选项投一票)</h2>
+        <div class="text-center fontColor" id="isVoted" ></div>
+        <hr size=10>
+        <div class="text-center">
+            <a href="#" onclick="App.refreshVotes()" class="btn btn-primary">刷新投票信息</a>
+        </div>
+        <div class="table-responsive">
+            <form id = "tbody1">
+            </form>
+        </div>
+        <div class="text-center ">
+            <a href="#" onclick="App.voteForCandidate()" class="btn btn-primary">投票</a>
+        </div>
+        <div class="text-center " id = "voteText">
+
+        </div>
+        <nav class="navbar navbar-default navbar-fixed-bottom main"><!--贴在底部，不会消失-->
+			<div style="text-align:center" ><strong><p id="account"></p></strong></div>
+            <div style="text-align:center" ><strong><p id="chairAccount"></p></strong></div>
+		</nav>
+    </body>
+
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+    <script src="./index.js"></script>
+</html>
